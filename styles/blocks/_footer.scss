@@ -1,0 +1,117 @@
+.footer {
+    padding-block: 110px;
+    background-color: var(--color-light-alt);
+
+    @include mobile {
+        padding-block: 80px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 50px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 50px;
+        }
+    }
+
+    &__contacts-wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 67px;
+        max-width: 550px;
+
+        @include tablet {
+            column-gap: 40px;
+            max-width: 350px;
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__logo-image {
+        @include desktop {
+            width: 160px;
+            height: auto;
+        }
+
+        @include tablet {
+            width: 140px;
+        }
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: 400;
+        color: var(--color-dark-alt);
+
+        p {
+            @include fluid-text(16, 24);
+            line-height: 1.33;
+        }
+    }
+
+    &__contacts {
+        @include fluid-text(10, 14);
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 28px;
+        text-decoration: underline var(--color-accent);
+
+        @include mobile {
+            row-gap: 18px;
+        }
+    }
+
+    &__links-wrapper {
+        @include fluid-text(10, 12);
+        color: var(--color-gray);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 100px;
+
+        @include mobile {
+            row-gap: 50px;
+        }
+    }
+
+    &__links-and-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: 140px;
+
+        @include desktop {
+            column-gap: 100px;
+        }
+
+        @include tablet {
+            column-gap: 70px;
+        }
+
+        @include mobile {
+            column-gap: 85px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 13px;
+    }
+
+    &__extra {
+        opacity: 65%;
+    }
+}

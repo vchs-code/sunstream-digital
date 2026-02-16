@@ -1,0 +1,131 @@
+.illuminate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 60px;
+
+    @include mobile {
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: center;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+        max-width: 593px;
+
+        @include tablet{
+            max-width: 450px;
+        }
+
+        @include mobile {
+            row-gap: 40px;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        @include mobile {
+            row-gap: 20px
+        }
+    }
+
+    &__description {
+        @include fluid-text(14, 18);
+        font-weight: 600;
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    &__img-list {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        align-self: start;
+        gap: 20px;
+
+        @include tablet {
+            grid-template-columns: repeat(2, auto);
+        }
+
+        @include mobile {
+            align-self: center;
+            gap: 10px;
+        }
+    }
+
+    &__img-item {
+        &:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1 / span 2;
+
+            @include tablet {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+            }
+        }
+    }
+
+    &__image {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    &__services {
+        max-width: 498px;
+    }
+
+    &__services-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 48px;
+
+        @include desktop {
+            row-gap: 28px;
+        }
+
+        @include mobile {
+            max-width: 400px;
+        }
+    }
+
+    &__services-item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+
+        @include tablet {
+            row-gap: 8px;
+        }
+    }
+
+    &__services-header {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        @include tablet {
+            column-gap: 10px;
+        }
+    }
+
+    &__services-description {
+        @include fluid-text(12, 14);
+    }
+}

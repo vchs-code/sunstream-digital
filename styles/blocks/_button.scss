@@ -1,0 +1,112 @@
+.button {
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+
+    &--small {
+        padding-inline: 16px;
+        height: 40px;
+        font-size: 12px;
+        color: var(--color-light);
+        background-color: var(--color-gray-alt);
+
+        &-alt {
+            background-color: var(--color-dark-alt);
+            color: var(--color-accent);
+        }
+
+        @include hover {
+            background-color: var(--color-accent);
+            color: var(--color-dark-alt);
+            transition-duration: var(--transition-duration);
+        }
+    }
+
+    &--burger {
+        @include reset-button;
+        @include square(48px);
+        
+        position: relative;
+
+        &::after {
+            @include abs-center;
+
+            content: '';
+            width: 70%;
+            height: 2px;
+            background-color: var(--color-gray);
+            border-radius: 5px;
+            box-shadow: 0 -10px var(--color-gray), 0 10px var(--color-gray);
+        }
+    }
+
+    &--cross {
+        @include reset-button;
+        @include square(48px);
+        
+        position: relative;
+
+        &::before,
+        &::after {
+            @include abs-center;
+
+            content: '';
+            width: 80%;
+            height: 2px;
+            background-color: var(--color-gray);
+            border-radius: 5px;
+        }
+
+        &::before {
+            rotate: 45deg;
+        }
+
+        &::after {
+            rotate: -45deg;
+        }
+    }
+
+    &--fill, &--transparent {
+        height: var(--button-height);
+        padding-inline: 42px;
+    }
+
+    &--fill {
+        color: var(--color-accent);
+        background-color: var(--color-dark-alt);
+
+        @include hover {
+            background-color: var(--color-accent);
+            color: var(--color-dark-alt);
+            transition-duration: var(--transition-duration);
+        }
+    }
+
+    &--transparent {
+        color: var(--color-dark-alt);
+        border: var(--border);
+        background-color: transparent;
+
+        @include hover {
+            background-color: var(--color-dark-alt);
+            color: var(--color-light);
+            transition-duration: var(--transition-duration);
+        }
+    }
+
+    &--up {
+        @include square(56px);
+        @include flex-center;
+
+        border-radius: 50%;
+        background-color: var(--color-dark-alt);
+
+        @include hover {
+            background-color: var(--color-accent);
+
+            svg path {
+                fill: var(--color-dark-alt);
+            }
+        }
+    }
+}

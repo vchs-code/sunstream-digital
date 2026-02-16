@@ -1,0 +1,70 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+
+    @include mobile {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+
+        @include mobile {
+            display: contents;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        @include mobile {
+            display: contents;
+        }
+    }
+
+    &__title {
+        @include mobile {
+            order: 1;
+            text-align: center;
+        }
+    }
+
+    &__description {
+        @include fluid-text(16, 24);
+        font-weight: 400;
+        max-width: 695px;
+
+        @include mobile {
+            order: 2;
+            text-align: center;
+            max-width: 500px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        column-gap: 32px;
+
+        @include mobile {
+            order: 3;
+        }
+    }
+
+    &__image {
+        @include tablet {
+            max-width: 300px;
+        }
+
+        @include mobile {
+            order: 4;
+            max-width: 392px;
+        }
+    }
+}

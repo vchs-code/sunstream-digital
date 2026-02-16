@@ -1,0 +1,46 @@
+.progress {
+    @include mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 57px;
+
+        @include tablet {
+            column-gap: 30px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 15px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+
+        @include tablet {
+            column-gap: 8px;
+        }
+    }
+
+    &__number {
+        color: var(--color-dark-alt);
+    }
+
+    &__description {
+        @include fluid-text(15, 24);
+
+        font-weight: 400;
+        line-height: 1.3;
+
+        @include mobile {
+            max-width: 130px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.header {
+    padding-block: 20px;
+
+    @include mobile {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    &__logo {
+        @include mobile {
+            width: 150px;
+        }
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            column-gap: 30px;
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 28px;
+
+            @include hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 100%;
+                left: 50%;
+                translate: -50%;
+                width: 0;
+                height: 2px;
+                background-color: currentColor;
+                transition-duration: var(--transition-duration);
+            }
+        }
+    }
+}

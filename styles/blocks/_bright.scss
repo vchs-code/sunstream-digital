@@ -1,0 +1,47 @@
+.bright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+
+    @include mobile {
+        flex-direction: column;
+        row-gap: 35px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 50px;
+        max-width: 590px;
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: center;
+            text-align: center;
+            max-width: 400px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 35px;
+
+        @include mobile {
+            row-gap: 25px;
+        }
+    }
+
+    &__description {
+        @include fluid-text(14, 18);
+    }
+
+    &__image {
+        @include tablet {
+            max-width: 300px;
+        }
+    }
+}
